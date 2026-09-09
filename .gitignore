@@ -1,0 +1,9 @@
+# Datos de leads / CRM — nunca subir a un repo público
+*.csv
+dataset_*.json
+
+# Sistema
+.DS_Store
+Thumbs.db
+node_modules/
+.vercel
