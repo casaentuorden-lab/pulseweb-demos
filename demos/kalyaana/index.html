@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalyaana Osteopatía y Masajes — Las Rozas de Madrid</title>
+<meta name="description" content="Osteopatía y masaje terapéutico en Las Rozas de Madrid con Ana Rodrigo. 5,0★ con 103 opiniones verificadas. Masaje relajante, descontracturante, deportivo, osteopatía y tratamiento ATM.">
+<style>
+  :root{
+    --bg:#2f3a30;
+    --bg-deep:#232b24;
+    --surface:#ffffff;
+    --cream:#f5f1e8;
+    --cream-alt:#efe9dc;
+    --ink:#2b2b26;
+    --ink-soft:#5f6157;
+    --line:#e3ddcf;
+    --brand:#6b7f5e;
+    --brand-dark:#4e5f43;
+    --accent:#c98a5b;
+    --accent-soft:#e6c9ae;
+    --star:#d9a441;
+    --max:960px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--surface);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  a{color:inherit}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg,var(--bg-deep) 0%,var(--brand-dark) 100%);
+    color:#f7f5ef;
+    padding:56px 0 64px;
+  }
+  .brand{
+    display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+    letter-spacing:.06em;
+  }
+  .brand strong{font-size:1.5rem;font-weight:800}
+  .brand span{font-size:.8rem;color:var(--accent-soft);letter-spacing:.22em}
+  .hero h1{
+    margin-top:22px;
+    font-size:2rem;
+    line-height:1.25;
+    font-weight:800;
+    max-width:22ch;
+  }
+  .hero p.lead{
+    margin-top:16px;
+    font-size:1.05rem;
+    color:#dcd9cd;
+    max-width:54ch;
+  }
+
+  /* Rating badge */
+  .rating{
+    margin-top:26px;
+    display:inline-flex;align-items:center;gap:14px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:14px;
+    padding:14px 18px;
+  }
+  .rating .score{font-size:1.7rem;font-weight:800;line-height:1}
+  .rating .stars{color:var(--star);font-size:1rem;letter-spacing:2px}
+  .rating .meta{font-size:.85rem;color:#dcd9cd}
+
+  /* CTA buttons */
+  .actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-size:1.05rem;font-weight:700;
+    padding:15px 24px;
+    border-radius:12px;
+    text-decoration:none;
+    border:2px solid transparent;
+    transition:transform .08s ease, background .2s ease;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--accent);color:#2b1a0e}
+  .btn-primary:hover{background:#d89a6d}
+  .btn-ghost{border-color:rgba(255,255,255,.38);color:#f7f5ef}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+  /* Sections */
+  section{padding:52px 0}
+  section.alt{background:var(--cream)}
+  h2{
+    font-size:1.4rem;font-weight:800;color:var(--ink);
+    margin-bottom:6px;
+  }
+  .sub{color:var(--ink-soft);margin-bottom:28px}
+
+  /* Services */
+  .grid{
+    display:grid;gap:16px;
+    grid-template-columns:1fr;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+  }
+  .card h3{
+    font-size:1.05rem;font-weight:700;margin-bottom:6px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .card p{color:var(--ink-soft);font-size:.95rem}
+  .price{
+    margin-left:auto;
+    font-size:.95rem;font-weight:800;color:var(--brand-dark);
+    background:var(--cream-alt);
+    border-radius:999px;
+    padding:2px 12px;
+    white-space:nowrap;
+  }
+  .dot{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--brand);flex:none;
+  }
+  .services-note{
+    margin-top:18px;font-size:.85rem;color:var(--ink-soft);
+  }
+
+  /* Location block — destacado */
+  .location{
+    background:var(--surface);
+    border:2px solid var(--accent-soft);
+    border-radius:16px;
+    padding:26px;
+    display:grid;gap:14px;
+  }
+  .location h2{margin-bottom:0}
+  .location .pending{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--cream-alt);
+    color:var(--brand-dark);
+    font-weight:700;font-size:.9rem;
+    border-radius:10px;
+    padding:10px 14px;
+    align-self:flex-start;
+  }
+  .location .addr{
+    font-size:1.05rem;font-weight:700;color:var(--ink);
+  }
+  .location p{color:var(--ink-soft);font-size:.95rem}
+
+  /* Info rows */
+  .info{display:grid;gap:14px;grid-template-columns:1fr}
+  .info .row{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:12px;padding:18px;
+  }
+  .info .k{font-weight:700;font-size:.9rem;color:var(--brand-dark);min-width:112px}
+  .info .v{color:var(--ink-soft);font-size:.95rem}
+  .hours{list-style:none;font-size:.95rem;color:var(--ink-soft)}
+  .hours li{display:flex;justify-content:space-between;gap:20px;padding:3px 0;max-width:320px}
+  .hours .closed{color:#a7a394}
+
+  /* Sticky mobile call bar */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:var(--bg-deep);
+    border-top:1px solid rgba(255,255,255,.12);
+    padding:10px 16px;
+    display:flex;
+  }
+  .callbar a{
+    flex:1;
+    background:var(--accent);color:#2b1a0e;
+    text-align:center;font-weight:800;font-size:1.05rem;
+    padding:14px;border-radius:10px;text-decoration:none;
+  }
+  body{padding-bottom:76px}
+
+  footer{
+    background:var(--bg-deep);color:#a7a394;
+    padding:30px 0;font-size:.85rem;
+  }
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+
+  @media(min-width:720px){
+    .hero{padding:72px 0 80px}
+    .hero h1{font-size:2.6rem}
+    section{padding:64px 0}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .info{grid-template-columns:repeat(2,1fr)}
+    .callbar{display:none}
+    body{padding-bottom:0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><strong>Kalyaana</strong><span>OSTEOPATÍA Y MASAJES</span></div>
+    <h1>Osteopatía y masaje terapéutico en Las Rozas de Madrid</h1>
+    <p class="lead">Ana Rodrigo. Sesiones personalizadas de osteopatía, masaje descontracturante, deportivo y relajante, tratamiento de ATM y terapias de bienestar.</p>
+
+    <div class="rating" role="img" aria-label="5,0 estrellas sobre 5 con 103 opiniones verificadas">
+      <div class="score">5,0</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="meta">103 opiniones verificadas</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="tel:+34681906962">Llamar ahora · 681 90 69 62</a>
+      <a class="btn btn-ghost" href="#donde">Dónde encontrarnos</a>
+    </div>
+  </div>
+</header>
+
+<section id="servicios">
+  <div class="wrap">
+    <h2>Servicios y tarifas</h2>
+    <p class="sub">Precio por sesión. Cada tratamiento se adapta a lo que necesitas.</p>
+    <div class="grid">
+      <div class="card">
+        <h3><span class="dot"></span>Osteopatía <span class="price">50 €</span></h3>
+        <p>Valoración y tratamiento manual de molestias musculares y articulares.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>Masaje descontracturante <span class="price">50 €</span></h3>
+        <p>Trabajo profundo sobre contracturas y zonas de tensión acumulada.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>Masaje deportivo <span class="price">50 €</span></h3>
+        <p>Preparación y recuperación muscular antes o después del ejercicio.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>Tratamiento ATM <span class="price">50 €</span></h3>
+        <p>Abordaje de la articulación temporomandibular: mandíbula, bruxismo y tensión.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>Masaje relajante <span class="price">45 €</span></h3>
+        <p>Sesión suave para reducir el estrés y descansar mejor.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>Masaje infantil <span class="price">40 €</span></h3>
+        <p>Sesión adaptada a los más pequeños.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>Reflexología podal</h3>
+        <p>Estimulación de puntos del pie para favorecer el equilibrio general.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>Lifting facial japonés (Kobido)</h3>
+        <p>Masaje facial que trabaja la musculatura y la luminosidad de la piel.</p>
+      </div>
+    </div>
+    <p class="services-note">Reflexología podal y Kobido: consulta la tarifa al pedir cita.</p>
+  </div>
+</section>
+
+<section class="alt" id="donde">
+  <div class="wrap">
+    <div class="location">
+      <h2>Dónde encontrarnos</h2>
+      <p>Estamos actualizando nuestra dirección en todas las plataformas para que no haya confusión. Mientras tanto, lo más rápido y seguro es llamarnos y te confirmamos la ubicación exacta y cómo llegar.</p>
+      <span class="pending">📍 Dirección a confirmar con la clienta</span>
+      <div class="addr">Las Rozas de Madrid</div>
+      <p>Cita previa por teléfono: <a href="tel:+34681906962"><strong>681 90 69 62</strong></a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Información</h2>
+    <p class="sub">Horario de atención y forma de contacto.</p>
+    <div class="info">
+      <div class="row">
+        <div class="k">Zona</div>
+        <div class="v">Las Rozas de Madrid</div>
+      </div>
+      <div class="row">
+        <div class="k">Teléfono</div>
+        <div class="v"><a href="tel:+34681906962">681 90 69 62</a></div>
+      </div>
+      <div class="row">
+        <div class="k">Cita</div>
+        <div class="v">Previa, por teléfono</div>
+      </div>
+      <div class="row">
+        <div class="k">Horario</div>
+        <div class="v">
+          <ul class="hours">
+            <li><span>Lunes a viernes</span><span>9:30–20:00</span></li>
+            <li><span>Sábado</span><span class="closed">Cerrado</span></li>
+            <li><span>Domingo</span><span class="closed">Cerrado</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap" style="text-align:center">
+    <h2>¿Reservamos tu sesión?</h2>
+    <p class="sub" style="margin-bottom:22px">Llámanos y te atiende Ana directamente.</p>
+    <a class="btn btn-primary" href="tel:+34681906962">Llamar al 681 90 69 62</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Kalyaana Osteopatía y Masajes · Ana Rodrigo · Las Rozas de Madrid</span>
+    <span>Tel. 681 90 69 62</span>
+  </div>
+</footer>
+
+<nav class="callbar">
+  <a href="tel:+34681906962">📞 Llamar · 681 90 69 62</a>
+</nav>
+
+</body>
+</html>
