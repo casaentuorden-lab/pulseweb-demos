@@ -90,6 +90,19 @@
   .btn-ghost{border-color:rgba(255,255,255,.38);color:#f7f5ef}
   .btn-ghost:hover{background:rgba(255,255,255,.1)}
 
+  /* Photo band */
+  figure.photoband{margin:0;background:var(--cream-alt)}
+  figure.photoband img{
+    display:block;width:100%;
+    aspect-ratio:3/2;max-height:420px;
+    object-fit:cover;object-position:50% 45%;
+  }
+  figure.photoband figcaption{
+    max-width:var(--max);margin:0 auto;
+    padding:8px 20px;
+    font-size:.75rem;color:var(--ink-soft);
+  }
+
   /* Sections */
   section{padding:52px 0}
   section.alt{background:var(--cream)}
@@ -213,6 +226,15 @@
     </div>
   </div>
 </header>
+
+<figure class="photoband">
+  <picture>
+    <source srcset="foto.webp" type="image/webp">
+    <img src="foto.jpg" width="1600" height="1067"
+         alt="Sesión de masaje terapéutico en la zona lumbar">
+  </picture>
+  <figcaption>Imagen orientativa del sector.</figcaption>
+</figure>
 
 <section id="servicios">
   <div class="wrap">
