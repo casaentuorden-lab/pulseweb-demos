@@ -11,7 +11,8 @@ despliegan desde este único repositorio en un único proyecto de Vercel.
 demos/
   glass-pamar/
     index.html
-    foto.jpg / foto.webp
+    hero-wide.jpg / hero-wide.webp   (>= 720px de viewport)
+    hero-tall.jpg / hero-tall.webp   (movil, retrato)
 ```
 
 ## Añadir una demo nueva
@@ -25,23 +26,33 @@ demos/
 
 ## Imágenes
 
-Cada demo lleva una imagen (`foto.jpg` + `foto.webp` en la carpeta del negocio),
-servida con `<picture>` en una banda a ancho completo bajo el hero, con
-`<figcaption>` "Imagen orientativa del sector." cuando no es una foto real del
-local.
+La foto es el **fondo del hero a pantalla completa**. El texto (título, reseña,
+botón de llamada) va superpuesto, con un degradado oscuro (`.hero-scrim`) entre
+la foto y el texto: más opaco abajo y a la izquierda (donde va el texto), casi
+transparente arriba. **Nunca texto directo sobre foto sin ese scrim.** Además,
+`text-shadow` suave en `.hero-content` como refuerzo.
 
-Orden de preferencia para elegirla:
+Dos recortes por demo, servidos con `<picture>` + `media`:
+
+- `hero-wide` — 2000×1150, para viewport >= 720px.
+- `hero-tall` — 1400×1800, para móvil (retrato).
+
+Pie "Imagen orientativa del sector." (`.hero-credit`) dentro del hero cuando no
+es una foto real del local.
+
+Orden de preferencia para elegir la foto:
 
 1. **Foto real** del local o del trabajo, si el CSV de Apify (`imageUrl`) o una
-   fuente pública legítima tiene una nítida de al menos 1200px de lado corto.
+   fuente pública legítima tiene una nítida que aguante el tamaño del hero sin
+   pixelarse (~2000px de lado largo).
 2. Si no, **foto de stock gratuita** (Unsplash / Pexels / Pixabay) que ambiente
-   el sector, genérica, sin dar a entender que es el local concreto.
+   el sector, genérica, sin dar a entender (ni con IA) que es el local concreto.
 
 Si una imagen candidata lleva **marca de agua**, se descarta — no se usa ni se
 edita para quitarla.
 
-Procesado: recorte 3:2, ~1600px de ancho, JPEG q72 (mozjpeg) + WebP q68, metadatos
-eliminados. Objetivo: < ~150 KB por archivo.
+Procesado (`sharp`): recorte al ratio de cada variante, JPEG q70 (mozjpeg) +
+WebP q66, metadatos eliminados.
 
 ## Notas
 

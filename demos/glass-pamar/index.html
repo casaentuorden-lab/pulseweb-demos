@@ -31,11 +31,34 @@
   .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
   a{color:inherit}
 
-  /* Header / hero */
+  /* Header / hero — foto a pantalla completa con scrim */
   .hero{
-    background:linear-gradient(160deg,var(--bg) 0%,var(--brand-dark) 100%);
+    position:relative;isolation:isolate;overflow:hidden;
+    min-height:600px;min-height:100svh;
+    display:flex;align-items:flex-end;
     color:#f8fafc;
-    padding:56px 0 64px;
+    background:var(--bg);
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 26%}
+  .hero-scrim{
+    position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(to top,
+        rgba(6,11,20,.96) 0%, rgba(6,11,20,.90) 22%,
+        rgba(6,11,20,.72) 45%, rgba(6,11,20,.46) 68%, rgba(6,11,20,.20) 100%),
+      linear-gradient(to right,
+        rgba(6,11,20,.6) 0%, rgba(6,11,20,.18) 55%, rgba(6,11,20,0) 100%);
+  }
+  .hero-content{
+    position:relative;z-index:2;width:100%;
+    padding-top:76px;padding-bottom:84px;
+    text-shadow:0 1px 3px rgba(0,0,0,.45);
+  }
+  .hero-credit{
+    margin-top:20px;
+    font-size:.72rem;color:rgba(255,255,255,.6);
+    text-shadow:0 1px 2px rgba(0,0,0,.55);
   }
   .brand{
     display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
@@ -86,19 +109,6 @@
   .btn-primary:hover{background:#7dd3fc}
   .btn-ghost{border-color:rgba(255,255,255,.35);color:#f8fafc}
   .btn-ghost:hover{background:rgba(255,255,255,.1)}
-
-  /* Photo band */
-  figure.photoband{margin:0;background:var(--bg-alt)}
-  figure.photoband img{
-    display:block;width:100%;
-    aspect-ratio:3/2;max-height:420px;
-    object-fit:cover;object-position:50% 40%;
-  }
-  figure.photoband figcaption{
-    max-width:var(--max);margin:0 auto;
-    padding:8px 20px;
-    font-size:.75rem;color:var(--ink-soft);
-  }
 
   /* Sections */
   section{padding:52px 0}
@@ -166,7 +176,8 @@
   footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
 
   @media(min-width:720px){
-    .hero{padding:72px 0 80px}
+    .hero{max-height:900px}
+    .hero-content{padding-top:120px;padding-bottom:64px}
     .hero h1{font-size:2.6rem}
     section{padding:64px 0}
     .grid{grid-template-columns:repeat(2,1fr)}
@@ -179,7 +190,15 @@
 <body>
 
 <header class="hero">
-  <div class="wrap">
+  <picture class="hero-bg">
+    <source media="(min-width:720px)" srcset="hero-wide.webp" type="image/webp">
+    <source media="(min-width:720px)" srcset="hero-wide.jpg">
+    <source srcset="hero-tall.webp" type="image/webp">
+    <img src="hero-tall.jpg" alt="" aria-hidden="true" fetchpriority="high">
+  </picture>
+  <div class="hero-scrim"></div>
+
+  <div class="wrap hero-content">
     <div class="brand"><strong>GLASS PAMAR 1970</strong><span>CRISTALERÍA</span></div>
     <h1>Instalación y reparación de cristales en Las Rozas</h1>
     <p class="lead">Cristalería con taller propio: vidrio a medida, sustitución de cristales rotos, vidrios de seguridad y acristalamiento para hogar y comercio.</p>
@@ -196,17 +215,10 @@
       <a class="btn btn-primary" href="tel:+34656936937">Llamar ahora · 656 93 69 37</a>
       <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
     </div>
+
+    <p class="hero-credit">Imagen orientativa del sector.</p>
   </div>
 </header>
-
-<figure class="photoband">
-  <picture>
-    <source srcset="foto.webp" type="image/webp">
-    <img src="foto.jpg" width="1600" height="1067"
-         alt="Corte de un vidrio a medida con cortadora de compás en el taller">
-  </picture>
-  <figcaption>Imagen orientativa del sector.</figcaption>
-</figure>
 
 <section id="servicios">
   <div class="wrap">
