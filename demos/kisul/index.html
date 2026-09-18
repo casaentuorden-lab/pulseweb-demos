@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KISUL Artes Marciales — Las Rozas</title>
+<meta name="description" content="Escuela de artes marciales y deportes de contacto en Las Rozas de Madrid: boxeo, kickboxing, muay thai, krav maga, judo, jiu jitsu, MMA, yoga y pilates. 5,0★ con 44 opiniones en Google.">
+<style>
+  :root{
+    --bg:#150f0d;
+    --bg-alt:#261815;
+    --surface:#ffffff;
+    --cream:#faf5f1;
+    --cream-alt:#f2e9e3;
+    --ink:#1c1310;
+    --ink-soft:#5c4f49;
+    --line:#ece0d8;
+    --brand:#b91c1c;
+    --brand-dark:#7a1212;
+    --accent:#ef4444;
+    --star:#fbbf24;
+    --max:1000px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--surface);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  /* Header / hero — foto a pantalla completa con scrim */
+  .hero{
+    position:relative;isolation:isolate;overflow:hidden;
+    min-height:600px;min-height:100svh;
+    display:flex;align-items:flex-end;
+    color:#fdf7f5;
+    background:var(--bg);
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+  .hero-scrim{
+    position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(to top,
+        rgba(14,9,8,.96) 0%, rgba(14,9,8,.90) 22%,
+        rgba(14,9,8,.72) 46%, rgba(14,9,8,.46) 70%, rgba(14,9,8,.18) 100%),
+      linear-gradient(to right,
+        rgba(14,9,8,.58) 0%, rgba(14,9,8,.16) 55%, rgba(14,9,8,0) 100%);
+  }
+  .hero-content{
+    position:relative;z-index:2;width:100%;
+    padding-top:76px;padding-bottom:84px;
+    text-shadow:0 1px 3px rgba(0,0,0,.45);
+  }
+  .hero-credit{
+    margin-top:20px;
+    font-size:.72rem;color:rgba(255,255,255,.6);
+    text-shadow:0 1px 2px rgba(0,0,0,.55);
+  }
+  .brand{
+    display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+    letter-spacing:.06em;
+  }
+  .brand strong{font-size:1.6rem;font-weight:800}
+  .brand span{font-size:.8rem;color:var(--accent);letter-spacing:.2em}
+  .hero h1{
+    margin-top:22px;
+    font-size:2rem;
+    line-height:1.22;
+    font-weight:800;
+    max-width:22ch;
+  }
+  .hero p.lead{
+    margin-top:16px;
+    font-size:1.05rem;
+    color:#ecdedb;
+    max-width:56ch;
+  }
+
+  /* Rating badge */
+  .rating{
+    margin-top:26px;
+    display:inline-flex;align-items:center;gap:14px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:14px;
+    padding:14px 18px;
+  }
+  .rating .score{font-size:1.7rem;font-weight:800;line-height:1}
+  .rating .stars{color:var(--star);font-size:1rem;letter-spacing:2px}
+  .rating .meta{font-size:.85rem;color:#ecdedb}
+
+  /* CTA buttons */
+  .actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-size:1.05rem;font-weight:700;
+    padding:15px 24px;
+    border-radius:12px;
+    text-decoration:none;
+    border:2px solid transparent;
+    transition:transform .08s ease, background .2s ease;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--accent);color:#2a0808}
+  .btn-primary:hover{background:#f36c6c}
+  .btn-ghost{border-color:rgba(255,255,255,.35);color:#fdf7f5}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+  /* Sections */
+  section{padding:56px 0}
+  section.alt{background:var(--cream)}
+  h2{
+    font-size:1.5rem;font-weight:800;color:var(--ink);
+    margin-bottom:6px;
+  }
+  .eyebrow{
+    font-size:.78rem;font-weight:800;color:var(--brand);
+    letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;
+  }
+  .sub{color:var(--ink-soft);margin-bottom:28px;max-width:64ch}
+
+  /* Feature: imagen + texto a dos columnas */
+  .feature{
+    display:grid;gap:28px;
+    grid-template-columns:1fr;
+    align-items:center;
+  }
+  .feature-media{
+    border-radius:16px;overflow:hidden;
+    aspect-ratio:7/5;
+  }
+  .feature-media img{width:100%;height:100%;object-fit:cover}
+  .feature-body p{color:var(--ink-soft);margin-top:12px}
+  .feature-body p + p{margin-top:10px}
+  .feature.reverse .feature-media{order:-1}
+
+  /* Disciplinas: pills */
+  .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .tag{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:999px;padding:9px 16px;
+    font-size:.9rem;font-weight:600;color:var(--ink);
+  }
+  .tag .dot{
+    display:inline-block;width:7px;height:7px;border-radius:50%;
+    background:var(--brand);margin-right:8px;
+  }
+
+  /* Info rows */
+  .info{display:grid;gap:14px;grid-template-columns:1fr}
+  .info .row{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:12px;padding:18px;
+  }
+  .info .k{font-weight:700;font-size:.9rem;color:var(--brand-dark);min-width:112px}
+  .info .v{color:var(--ink-soft);font-size:.95rem}
+
+  .map{
+    margin-top:24px;border-radius:16px;overflow:hidden;
+    border:1px solid var(--line);
+    aspect-ratio:16/9;
+  }
+  .map iframe{width:100%;height:100%;border:0;display:block}
+
+  .highlight{
+    margin-top:24px;
+    background:var(--bg-alt);color:#fdf7f5;
+    border-radius:16px;padding:24px;
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .highlight p{font-size:1.05rem;font-weight:700}
+  .highlight span{display:block;font-size:.85rem;font-weight:400;color:#d8c9c5;margin-top:4px}
+
+  /* Sticky mobile call bar */
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:var(--bg);
+    border-top:1px solid rgba(255,255,255,.12);
+    padding:10px 16px;
+    display:flex;
+  }
+  .callbar a{
+    flex:1;
+    background:var(--accent);color:#2a0808;
+    text-align:center;font-weight:800;font-size:1.05rem;
+    padding:14px;border-radius:10px;text-decoration:none;
+  }
+  body{padding-bottom:76px}
+
+  footer{
+    background:var(--bg);color:#a89b96;
+    padding:30px 0;font-size:.85rem;
+  }
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+
+  @media(min-width:760px){
+    .hero{max-height:900px}
+    .hero-content{padding-top:120px;padding-bottom:64px}
+    .hero h1{font-size:2.7rem}
+    section{padding:76px 0}
+    .feature{grid-template-columns:1fr 1fr;gap:48px}
+    .info{grid-template-columns:repeat(2,1fr)}
+    .callbar{display:none}
+    body{padding-bottom:0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <picture class="hero-bg">
+    <source media="(min-width:760px)" srcset="hero-wide.webp" type="image/webp">
+    <source media="(min-width:760px)" srcset="hero-wide.jpg">
+    <source srcset="hero-tall.webp" type="image/webp">
+    <img src="hero-tall.jpg" alt="" aria-hidden="true" fetchpriority="high">
+  </picture>
+  <div class="hero-scrim"></div>
+
+  <div class="wrap hero-content">
+    <div class="brand"><strong>KISUL</strong><span>ARTES MARCIALES</span></div>
+    <h1>Artes marciales y deportes de contacto en Las Rozas</h1>
+    <p class="lead">Boxeo, kickboxing, muay thai, krav maga, judo, jiu jitsu, MMA, yoga y pilates — clases para todos los niveles desde 2018.</p>
+
+    <div class="rating" role="img" aria-label="5,0 estrellas sobre 5 con 44 opiniones en Google">
+      <div class="score">5,0</div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="meta">44 opiniones en Google</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="tel:+34675311459">Llamar ahora · 675 31 14 59</a>
+      <a class="btn btn-ghost" href="#disciplinas">Ver disciplinas</a>
+    </div>
+
+    <p class="hero-credit">Imagen orientativa del sector.</p>
+  </div>
+</header>
+
+<section id="historia">
+  <div class="wrap">
+    <div class="feature">
+      <div class="feature-media">
+        <picture>
+          <source srcset="historia.webp" type="image/webp">
+          <img src="historia.jpg" alt="" aria-hidden="true">
+        </picture>
+      </div>
+      <div class="feature-body">
+        <div class="eyebrow">Nuestra historia</div>
+        <h2>Un homenaje que se convirtió en escuela</h2>
+        <p>KISUL nació en 2018 de la mano de <strong>Juan Avellano</strong> (4º Dan de Kickboxing, Doctor en Educación por la Universidad Complutense de Madrid) y <strong>Alberto Benayas</strong> (2º Dan de Kickboxing).</p>
+        <p>Ambos fueron alumnos del maestro <strong>Ernesto Barba</strong>, fundador del Kisul original en Las Rozas, y crearon esta escuela en su honor: mismo nombre, mismo barrio, continuando su legado con una nueva generación de alumnos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="disciplinas">
+  <div class="wrap">
+    <div class="feature reverse">
+      <div class="feature-media">
+        <picture>
+          <source srcset="disciplinas.webp" type="image/webp">
+          <img src="disciplinas.jpg" alt="" aria-hidden="true">
+        </picture>
+      </div>
+      <div class="feature-body">
+        <div class="eyebrow">Disciplinas</div>
+        <h2>Más de una decena de disciplinas bajo un mismo techo</h2>
+        <p>Deportes de contacto, artes marciales tradicionales y entrenamiento funcional, para todos los niveles y edades.</p>
+        <div class="tags">
+          <span class="tag"><span class="dot"></span>Boxeo</span>
+          <span class="tag"><span class="dot"></span>Kickboxing</span>
+          <span class="tag"><span class="dot"></span>K1</span>
+          <span class="tag"><span class="dot"></span>Muay Thai</span>
+          <span class="tag"><span class="dot"></span>Krav Maga</span>
+          <span class="tag"><span class="dot"></span>Defensa personal femenina</span>
+          <span class="tag"><span class="dot"></span>Judo</span>
+          <span class="tag"><span class="dot"></span>Jiu Jitsu</span>
+          <span class="tag"><span class="dot"></span>Capoeira</span>
+          <span class="tag"><span class="dot"></span>MMA</span>
+          <span class="tag"><span class="dot"></span>Fight Cross</span>
+          <span class="tag"><span class="dot"></span>Yoga</span>
+          <span class="tag"><span class="dot"></span>Pilates</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="instalaciones">
+  <div class="wrap">
+    <div class="feature">
+      <div class="feature-media">
+        <picture>
+          <source srcset="instalaciones.webp" type="image/webp">
+          <img src="instalaciones.jpg" alt="" aria-hidden="true">
+        </picture>
+      </div>
+      <div class="feature-body">
+        <div class="eyebrow">Instalaciones</div>
+        <h2>Un espacio pensado para entrenar bien</h2>
+        <p>Suelo de tatami y material propio para entrenar con seguridad en cada disciplina.</p>
+        <p>Tienda de equipación en la propia recepción, para quien necesite guantes, protecciones o uniforme sin tener que buscarlo por su cuenta.</p>
+        <p>Los murales que decoran las salas están pintados a mano por el propio Juan Avellano, que combina sus dos pasiones: la pintura y las artes marciales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="contacto">
+  <div class="wrap">
+    <div class="eyebrow">Ubicación y contacto</div>
+    <h2>Ven a probar una clase</h2>
+    <p class="sub">Primera clase de prueba gratuita — sin compromiso.</p>
+
+    <div class="info">
+      <div class="row">
+        <div class="k">Dirección</div>
+        <div class="v">C. de Madrid, 14 · Las Rozas de Madrid</div>
+      </div>
+      <div class="row">
+        <div class="k">Teléfono</div>
+        <div class="v"><a href="tel:+34675311459">675 31 14 59</a></div>
+      </div>
+      <div class="row">
+        <div class="k">Instagram</div>
+        <div class="v"><a href="https://www.instagram.com/kisulartesmarciales/" target="_blank" rel="noopener">@kisulartesmarciales</a></div>
+      </div>
+      <div class="row">
+        <div class="k">Valoración</div>
+        <div class="v">5,0★ · 44 opiniones en Google</div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <div>
+        <p>¿Primera vez en KISUL?</p>
+        <span>Prueba tu clase gratuita antes de apuntarte.</span>
+      </div>
+      <a class="btn btn-primary" style="background:var(--brand);color:#fff" href="tel:+34675311459">Llamar al 675 31 14 59</a>
+    </div>
+
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=C.+de+Madrid,+14,+Las+Rozas+de+Madrid&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de KISUL Artes Marciales en Las Rozas"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>KISUL Artes Marciales · Las Rozas de Madrid</span>
+    <span>Tel. 675 31 14 59</span>
+  </div>
+</footer>
+
+<nav class="callbar">
+  <a href="tel:+34675311459">📞 Llamar · 675 31 14 59</a>
+</nav>
+
+</body>
+</html>
